@@ -1,9 +1,9 @@
 // routes/index.ts
 import { Router } from "express";
-import authRoutes from "./api/auth.routes";
+import authRoutes from "./api/routes";
 
 const rootRoutes: Router = Router();
 
-rootRoutes.use('/auth', authRoutes);
+rootRoutes.use("/auth", authRoutes);
 
-export default rootRoutes
+export default rootRoutes;

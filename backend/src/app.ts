@@ -1,17 +1,19 @@
-import express from 'express';
-import dotenv from 'dotenv';
+import express from "express";
+import dotenv from "dotenv";
+import fileUpload from "express-fileupload";
+import { _PORT } from "./secret";
+import routes from "./routes/api/routes";
 
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = _PORT;
 
-// Route sederhana
-app.get('/api/hello', (req, res) => {
-  res.json({ message: 'Hello, World!' });
-});
+app.use(express.json());
+app.use(fileUpload());
 
-// Start server
+app.use("/api", routes);
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
