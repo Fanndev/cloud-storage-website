@@ -24,6 +24,7 @@
     "@types/express": "^5.0.3",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^24.0.1",
+    "cookie-parser": "^1.4.7",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "express-fileupload": "^1.5.1",
@@ -31,11 +32,14 @@
     "next": "^15.3.3",
     "prisma": "^6.9.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "swagger-ui-express": "^5.0.1",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@tailwindcss/postcss": "^4.1.10",
+    "@types/cookie-parser": "^1.4.9",
     "@types/express-fileupload": "^1.5.1",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",

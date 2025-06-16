@@ -10,8 +10,8 @@ datasource db {
 
 model User {
   id            Int       @id @default(autoincrement())
-  google_id     String
-  email         String
+  google_id     String    @unique
+  email         String    @unique
   name          String?
   avatar_url    String?
   access_token  String
@@ -20,19 +20,19 @@ model User {
   created_at    DateTime  @default(now())
   updated_at    DateTime  @updatedAt
 
-  files         File[]    @relation("UserFiles")
+  files File[] @relation("UserFiles")
 }
 
 model File {
-  id           Int      @id @default(autoincrement())
-  user_id      Int
+  id            Int      @id @default(autoincrement())
+  user_id       Int
   drive_file_id String
-  file_name    String
-  mime_type    String?
-  size         BigInt?
-  drive_url    String?
-  is_public    Boolean   @default(false)
-  created_at   DateTime  @default(now())
+  file_name     String
+  mime_type     String?
+  size          BigInt?
+  drive_url     String?
+  is_public     Boolean  @default(false)
+  created_at    DateTime @default(now())
 
-  user         User      @relation("UserFiles", fields: [user_id], references: [id])
+  user User @relation("UserFiles", fields: [user_id], references: [id])
 }
