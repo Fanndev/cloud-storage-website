@@ -13,10 +13,4 @@ export async function googleCallback(req: Request, res: Response) {
   oauth2Client.setCredentials(tokens);
   const oauth2 = google.oauth2({ version: "v2", auth: oauth2Client });
   const user = await oauth2.userinfo.get();
-  await prismaClient.user.create({
-    data: {
-      email: user.data.email,
-      name: user.data.name,
-    },
-  });
 }

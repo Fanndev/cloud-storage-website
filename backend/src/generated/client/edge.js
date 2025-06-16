@@ -148,7 +148,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "D:\\Website Projek\\Fullstack\\clouds-storage\\backend\\src\\generated\\client",
+      "value": "D:\\clouds-storage\\backend\\src\\generated\\client",
       "fromEnvVar": null
     },
     "config": {
@@ -162,7 +162,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "D:\\Website Projek\\Fullstack\\clouds-storage\\backend\\prisma\\schema.prisma",
+    "sourceFilePath": "D:\\clouds-storage\\backend\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
