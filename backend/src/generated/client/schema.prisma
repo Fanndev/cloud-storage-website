@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/client"
+}
+
+datasource db {
+  provider = "postgresql" // ganti dengan sqlite/mysql sesuai kebutuhan
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int       @id @default(autoincrement())
+  google_id     String
+  email         String
+  name          String?
+  avatar_url    String?
+  access_token  String
+  refresh_token String?
+  token_expiry  DateTime?
+  created_at    DateTime  @default(now())
+  updated_at    DateTime  @updatedAt
+
+  files File[] @relation("UserFiles")
+}
+
+model File {
+  id            Int      @id @default(autoincrement())
+  user_id       Int
+  drive_file_id String
+  file_name     String
+  mime_type     String?
+  size          BigInt?
+  drive_url     String?
+  is_public     Boolean  @default(false)
+  created_at    DateTime @default(now())
+
+  user User @relation("UserFiles", fields: [user_id], references: [id])
+}
