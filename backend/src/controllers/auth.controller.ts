@@ -32,6 +32,7 @@ export async function googleCallback(
       maxAge: 1000 * 60 * 60 * 24 * 7,
     });
     return res.json({
+      ...httpResponse.CONFLICT,
       ...existing,
       refresh_token: tokens.refresh_token!,
       access_token: tokens.access_token!,
