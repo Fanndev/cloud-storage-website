@@ -34,17 +34,17 @@ export function AuthForm() {
           </div>
           <div>
             <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              CloudVault
+              Cloud Storage
             </h1>
-            <p className="text-gray-600 dark:text-gray-400 mt-2">Your secure cloud storage solution</p>
+            <p className="text-gray-600 dark:text-gray-400 mt-2">Solusi penyimpanan cloud aman Anda</p>
           </div>
         </div>
 
         {/* Content */}
         <div className="space-y-6 p-6 pt-2">
           <div className="text-center">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Welcome Back</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">Sign in to access your files securely</p>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Selamat Datang</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">Masuk untuk mengakses file Anda dengan aman</p>
           </div>
 
           {/* Google Sign In Button */}
