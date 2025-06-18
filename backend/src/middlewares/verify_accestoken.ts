@@ -13,7 +13,7 @@ export async function verifyGoogleAccessToken(
       "https://www.googleapis.com/oauth2/v3/userinfo",
       {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `${token}`,
         },
       }
     );
