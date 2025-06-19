@@ -4,19 +4,27 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { ThemeToggle } from "@/app/components/theme-toggle"
 import { Cloud, Sparkles } from "lucide-react"
+import { useGetGoogle } from "../services/auth/queries"
 
 export function AuthForm() {
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
+  const [params] = useState({});
+  const { data, refetch, isFetching } = useGetGoogle({ params });
 
   const handleGoogleSignIn = async () => {
-    setIsLoading(true)
-    // Simulate authentication
-    setTimeout(() => {
-      setIsLoading(false)
-      router.push("/dashboard")
-    }, 2000)
-  }
+    setIsLoading(true);
+    try {
+      const result = await refetch();
+      if (result.data?.url) {
+        window.location.href = result.data.url;
+      } else {
+        setIsLoading(false);
+      }
+    } catch {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="w-full max-w-md mx-auto">

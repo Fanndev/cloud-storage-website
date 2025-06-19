@@ -6,7 +6,7 @@ import { useSession } from "next-auth/react"
 export const useRefreshToken = () => {
     const { data: session, update } = useSession();
     const refreshToken = async () => {
-        const res = await axios.post("/auth/resfresh", {
+        const res = await axios.post("/auth/access-token", {
             refresh: session?.user?.refreshToken
         });
 

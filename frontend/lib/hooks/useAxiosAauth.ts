@@ -11,7 +11,7 @@ const useAxiosAuth = () => {
         
         const requestIntercept = axiosAuth.interceptors.request.use(async (config) => {
             if (!config.headers['Authorization']) {
-                config.headers['Authorization'] = `jwt ${session?.user?.token}`
+                config.headers['Authorization'] = `${session?.user?.token}`
             }
             return config;
         },
@@ -23,8 +23,7 @@ const useAxiosAuth = () => {
                 const prevRequest = error.config;
                 if (error.response.status === 401 && !prevRequest.sent) {
                     prevRequest.sent = true;
-                    // await refreshToken();
-                    prevRequest.headers["Authorization"] = `jwt ${session?.user?.token}`;
+                    prevRequest.headers["Authorization"] = `${session?.user?.token}`;
                     return axiosAuth(prevRequest)
                 }
                 return Promise.reject(error)
