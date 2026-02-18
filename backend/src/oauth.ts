@@ -26,7 +26,7 @@ export const drive = google.drive({ version: "v3", auth: oauth2Client });
 
 export function readCred() {
   try {
-    const creds = fs.readFileSync("cred.json");
+    const creds = fs.readFileSync(__dirname + "/cred.json");
     oauth2Client.setCredentials(JSON.parse(creds as any));
   } catch {
     console.log("cred.json not found");

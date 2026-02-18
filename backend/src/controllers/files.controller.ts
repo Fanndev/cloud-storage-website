@@ -37,7 +37,7 @@ export const readFiles = async (req: Request, res: Response): Promise<any> => {
       "https://www.googleapis.com/oauth2/v3/userinfo",
       {
         headers: {
-          Authorization: `Bearer ${accessToken}`,
+          Authorization: `${accessToken}`,
         },
       }
     );

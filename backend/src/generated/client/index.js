@@ -149,7 +149,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "D:\\Development\\project-kampus\\web\\clouds-storage\\backend\\src\\generated\\client",
+      "value": "D:\\Website Projek\\Fullstack\\clouds-storage\\backend\\src\\generated\\client",
       "fromEnvVar": null
     },
     "config": {
@@ -163,7 +163,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "D:\\Development\\project-kampus\\web\\clouds-storage\\backend\\prisma\\schema.prisma",
+    "sourceFilePath": "D:\\Website Projek\\Fullstack\\clouds-storage\\backend\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -176,7 +176,6 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
-  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
